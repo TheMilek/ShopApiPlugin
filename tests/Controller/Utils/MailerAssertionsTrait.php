@@ -13,7 +13,6 @@ namespace Tests\Sylius\ShopApiPlugin\Controller\Utils;
 
 use PHPUnit\Framework\AssertionFailedError;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Mailer\Event\MessageEvent;
 use Symfony\Component\Mailer\Event\MessageEvents;
 use Symfony\Component\Mailer\Test\Constraint;
 use Symfony\Component\Mime\RawMessage;
