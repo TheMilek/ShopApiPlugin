@@ -17,11 +17,13 @@ use Sylius\Component\Resource\Factory\FactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\Sylius\ShopApiPlugin\Controller\JsonApiTestCase;
+use Tests\Sylius\ShopApiPlugin\Controller\Utils\MailerAssertionsTrait;
 use Tests\Sylius\ShopApiPlugin\Controller\Utils\PurgePooledMessagesTrait;
 
 final class LoginApiTest extends JsonApiTestCase
 {
     use PurgePooledMessagesTrait;
+    use MailerAssertionsTrait;
 
     /**
      * @test

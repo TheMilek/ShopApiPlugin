@@ -16,14 +16,17 @@ use Symfony\Component\Filesystem\Filesystem;
 trait PurgePooledMessagesTrait
 {
     private static ?string $poolDirectory = null;
+    use MailerAssertionsTrait;
 
     /**
      * @before
      */
     public function purgePooledMessages(): void
     {
+        $this->setUpClient();
+
         /** @var Filesystem $filesystem */
-        $filesystem = $this->getContainer()->get('filesystem');
+        $filesystem = self::$clientContainer->get('filesystem');
 
         $filesystem->remove($this->getContainer()->getParameter('kernel.cache_dir') . '/pools');
     }
